@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="AHMAD AI - مساعدك الذكي الشخصي">
+  <title>AHMAD AI</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">AI</div>
+      <div><strong>AHMAD AI</strong><small>مساعدك الذكي الشخصي</small></div>
+    </div>
+    <span class="status"><i></i> النموذج الأولي</span>
+  </header>
+
+  <main class="layout">
+    <section class="hero">
+      <p class="eyebrow">مساحة العمل الشخصية</p>
+      <h1>مرحباً بك،<br><span>كيف أستطيع مساعدتك؟</span></h1>
+      <p class="muted">اكتب طلبك بالعربية. هذه النسخة تحفظ مهامك محلياً على جهازك وتتيح لك مراجعة الإجراءات قبل اعتمادها.</p>
+    </section>
+
+    <section class="panel chat-panel">
+      <div class="panel-heading"><div><h2>المحادثة</h2><p>أوامرك ومخرجات المساعد</p></div><button id="clearChat" class="ghost" type="button">مسح المحادثة</button></div>
+      <div id="messages" class="messages" aria-live="polite">
+        <article class="message assistant"><b>AHMAD AI</b><p>أهلاً بك! أنا النسخة الأولية من مساعدك. جرّب: «أنشئ مهمة لمتابعة العملاء» أو «جهّز رسالة إلى شركة». لن أرسل أي شيء خارج التطبيق.</p></article>
+      </div>
+      <form id="chatForm" class="composer">
+        <textarea id="prompt" rows="2" placeholder="اكتب أمرك هنا..." aria-label="اكتب أمرك"></textarea>
+        <button class="send" type="submit">إرسال <span>➤</span></button>
+      </form>
+      <div class="quick-actions">
+        <button type="button" data-prompt="أنشئ مهمة لمتابعة العملاء">＋ متابعة العملاء</button>
+        <button type="button" data-prompt="جهّز رسالة إلى شركة لعرض خدماتي">✉ إعداد رسالة</button>
+        <button type="button" data-prompt="اعرض مهامي الحالية">▤ مهامي</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading"><div><h2>مهامي</h2><p>محفوظة على هذا الجهاز</p></div><span id="taskCount" class="count">0</span></div>
+      <div id="tasks" class="task-list"><p class="empty">لا توجد مهام بعد.</p></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading"><div><h2>مركز الموافقات</h2><p>لا تنفيذ خارجي دون موافقتك</p></div><span id="approvalCount" class="count warning">0</span></div>
+      <div id="approvals" class="approval-list"><p class="empty">لا توجد إجراءات بانتظار الموافقة.</p></div>
+    </section>
+    <footer>AHMAD AI · إصدار تجريبي محلي 0.1 · لا تضع كلمات مرور أو بيانات مالية حساسة هنا.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
